@@ -1,0 +1,128 @@
+/* Estilos globales */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 120vh;
+    margin: 0;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+    position: relative;
+}
+
+/* Estilos para el video de fondo */
+#background-video {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+/* Estilos para contenedores */
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    z-index: 1;
+    margin-bottom: 20px;
+}
+
+/* Estilos para los botones */
+.button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 11px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(90deg, rgb(0, 238, 255), rgb(255, 103, 255), rgb(0, 238, 255));
+    background-size: 200% 100%;
+    z-index: -1;
+    animation: moveGradient 5s linear infinite;
+}
+
+@keyframes moveGradient {
+    0% { background-position: 100% 0%; }
+    100% { background-position: -100% 0%; }
+}
+
+/* Estilos para las cajas (contenedores) */
+.box {
+    position: relative;
+    padding: 20px;
+    border-radius: 14px;
+    background-color: rgba(0, 0, 0, 0.507);
+    color: white;
+    z-index: 1;
+}
+
+.box2 {
+    position: relative;
+    padding: 20px;
+    border-radius: 14px;
+    background: linear-gradient(to right, #c19bff9d, #7fffd488);
+    background-clip: padding-box;
+    border: 4px solid transparent;
+    background-origin: border-box;
+    background-color: rgba(0, 0, 0, 0.507);
+    color: white;
+    z-index: 1;
+}
+
+.box::before {
+    content: '';
+    position: absolute;
+    top: -3px;
+    right: -3px;
+    bottom: -3px;
+    left: -3px;
+    background: linear-gradient(to right, #c19bff9d, #7fffd488);
+    border-radius: 16px;
+    z-index: -1;
+}
+
+.box::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.507);
+    border-radius: 14px;
+    z-index: -1;
+}
+
+/* Separación extra para algunos contenedores */
+.rules-container {
+    margin-top: 50px;
+    z-index: 1;
+}
+
+.extrainfo-container {
+    margin-top: 50px;
+    z-index: 1;
+}
